@@ -28,6 +28,7 @@ $(document).ready(function() {
             success: function(response) {
                 $('#similarityScore').text(response.score);
                 $('#guessedImage').attr('src', response.generatedImage);
+                $('#hintGuessContainer').replaceWith($('#resultContainer')); // Replace hint-guess-container with resultContainer
                 $('#resultContainer').removeClass('hidden');
             },
             error: function() {

@@ -69,7 +69,8 @@ ul li {
     margin-top: 10px;
 }
 
-.image-container img {
+.image-container img,
+#guessedImage {
     width: 100%;
     max-width: 300px;
     border-radius: 8px;
@@ -77,6 +78,6 @@ ul li {
 
 .hint-guess-container {
     width: 50%;
-    /* padding-left: 10px; Reduced padding for less gap */
+    padding-left: 25px; 
     text-align: left;
 }

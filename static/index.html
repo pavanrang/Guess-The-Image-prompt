@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div>
         <h1>Guess the Prompt Game</h1>
         <button id="generateImageBtn">Generate Image and Hints</button>
         
-        <div id="imageContainer" class="hidden">
-            
+        <div id="imageContainer" class="hidden">  
             <div class="image-hint-container">
                 <div class="image-container">
                     <h2>Generated Image</h2>
                     <img id="generatedImage" src="" alt="Generated Image">
                 </div>
-                <div class="hint-guess-container">
+                <div class="hint-guess-container" id = "hintGuessContainer">
                     <h3>Hints</h3>
                     <div id="hintsList"></div>
                     <h2>Your Guess</h2>
@@ -30,8 +29,11 @@
         
         <div id="resultContainer" class="hidden">
             <h2>Result</h2>
+            <div id="guessedImageContainer">
+                <img id="guessedImage" src="" alt="Guessed Image">
+            </div>
             <p>Similarity Score: <span id="similarityScore"></span></p>
-            <img id="guessedImage" src="" alt="Guessed Image">
+            <!-- <img id="guessedImage" src="" alt="Guessed Image"> -->
         </div>
     </div>
 
