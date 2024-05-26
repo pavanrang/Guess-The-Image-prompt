@@ -8,7 +8,7 @@ $(document).ready(function() {
                 $('#hintsList').empty();
                 $('#hintsList').text('Hints: ' + response.hints.join(', '));
                 $('#imageContainer').removeClass('hidden');
-                $('#guessContainer').removeClass('hidden');
+                $('#generateImageBtn').addClass('hidden'); // Hide button after generating image
             },
             error: function() {
                 alert('Failed to generate image and hints. Please try again.');
