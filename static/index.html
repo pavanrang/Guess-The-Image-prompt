@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Prompt Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Prompt Game</h1>
+        <button id="generateImageBtn">Generate Image and Hints</button>
+        
+        <div id="imageContainer" class="hidden">
+            <h2>Generated Image</h2>
+            <div class="image-container">
+                <img id="generatedImage" src="" alt="Generated Image">
+                <div class="hint-guess-container">
+                    <h3>Hints</h3>
+                    <div id="hintsList"></div>
+                    <h2>Your Guess</h2>
+                    <input type="text" id="guessedPrompt" placeholder="Enter your guessed prompt">
+                    <button id="submitGuessBtn">Submit Guess</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="resultContainer" class="hidden">
+            <h2>Result</h2>
+            <p>Similarity Score: <span id="similarityScore"></span></p>
+            <img id="guessedImage" src="" alt="Guessed Image">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

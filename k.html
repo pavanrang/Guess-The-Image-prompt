@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guess the Prompt Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #image {
+      max-width: 100%;
+      height: auto;
+    }
+    #hints {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Guess the Prompt Game</h1>
+  <div id="game">
+    <img id="image" src="" alt="Generated Image">
+    <p id="hints"></p>
+    <input type="text" id="guessInput" placeholder="Enter your guess...">
+    <button id="submitGuess">Submit Guess</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const imageElement = document.getElementById('image');
+    const hintsElement = document.getElementById('hints');
+    const guessInput = document.getElementById('guessInput');
+    const submitGuessButton = document.getElementById('submitGuess');
+    const resultElement = document.getElementById('result');
+
+    // Function to fetch the image and hints from the backend
+    async function getImageAndHints() {
+      try {
+        const response = await fetch('/get-image');
+        const data = await response.json();
+
+        if (response.ok) {
+          imageElement.src = data.imageUrl;
+          hintsElement.textContent = `Hints: ${data.hints.join(', ')}`;
+        } else {
+          resultElement.textContent = `Error: ${data.detail}`;
+        }
+      } catch (error) {
+        resultElement.textContent = `Error: ${error.message}`;
+      }
+    }
+
+    // Function to send the guessed prompt to the backend and get the score
+    async function getScore(guessedPrompt) {
+      try {
+        const response = await fetch('/get-score', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ originalPrompt: '', guessedPrompt })
+        });
+        const data = await response.json();
+
+        if (response.ok) {
+          resultElement.textContent = `Score: ${data.score.toFixed(2)}`;
+        } else {
+          resultElement.textContent = `Error: ${data.detail}`;
+        }
+      } catch (error) {
+        resultElement.textContent = `Error: ${error.message}`;
+      }
+    }
+
+    // Event listener for the "Submit Guess" button
+    submitGuessButton.addEventListener('click', () => {
+      const guessedPrompt = guessInput.value.trim();
+      if (guessedPrompt) {
+        getScore(guessedPrompt);
+      } else {
+        resultElement.textContent = 'Please enter a guess.';
+      }
+    });
+
+    // Fetch the initial image and hints when the page loads
+    getImageAndHints();
+  </script>
+</body>
+</html>
