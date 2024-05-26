@@ -15,7 +15,7 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .hidden {
@@ -25,6 +25,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    border-radius: 12px;
 }
 
 button {
@@ -59,4 +60,22 @@ ul li {
     margin: 5px 0;
     padding: 10px;
     border-radius: 4px;
+}
+
+.image-hint-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+}
+
+.hint-guess-container {
+    width: 50%;
+    padding-left: 20px;
+    text-align: left;
 }
