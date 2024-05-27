@@ -1,5 +1,5 @@
 # Guess the Prompt Game
-
+![Demo](Demo.gif)
 
 ## About the Game
 
@@ -28,25 +28,6 @@
 - **Hints System:** Provides three hints to guide your guessing, striking a balance between challenge and assistance.
 - **Similarity Score:** Uses Jaro-Winkler similarity to calculate a score, giving you insight into how accurate your guess was.
 - **Interactive UI:** A user-friendly interface designed for seamless interaction and enhanced game experience.
-
-### Screenshots
-
-Here are some screenshots of the game in action:
-
-1. **Start Screen:**
-   - ![Start Screen](screenshots/start_screen.png)
-
-2. **Generated Image and Hints:**
-   - ![Generated Image](screenshots/generated_image.png)
-
-3. **Submit Your Guess:**
-   - ![Submit Guess](screenshots/submit_guess.png)
-
-4. **View Results:**
-   - ![View Results](screenshots/view_results.png)
-
----
-
 
 ## Installation
 
