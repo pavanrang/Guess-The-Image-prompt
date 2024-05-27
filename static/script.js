@@ -17,20 +17,20 @@ $(document).ready(function() {
     });
 
     $('#submitGuessBtn').click(function() {
-        const originalPromptText = $('#hintsList').text().replace('Hints: ', '');
         const guessedPrompt = $('#guessedPrompt').val();
+        const originalPrompt =$('#originalPrompt').val();
 
         $.ajax({
             url: 'http://127.0.0.1:8000/get-score',
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ originalPrompt: originalPromptText, guessedPrompt }),
+            data: JSON.stringify({ originalPrompt, guessedPrompt }),
             success: function(response) {
                 $('#similarityScore').text(response.score);
                 $('#guessedImage').attr('src', response.generatedImage);
                 
                 // Show original prompt below the generated image
-                $('#originalPrompt').text('Original Prompt: ' + originalPromptText);
+                $('#originalPrompt').text('Original Prompt: ' + originalPrompt);
                 $('#originalPrompt').removeClass('hidden');
                 
                 // Show guessed prompt below the guessed image

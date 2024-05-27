@@ -141,11 +141,13 @@ async def get_score(request: PromptRequest):
 
         # Calculate text similarity
         similarity_score = calculate_similarity_score(request.originalPrompt, request.guessedPrompt)
+        hi =request.originalPrompt
 
         # Return the results
         return {
             "generatedImage": image_url[0],
-            "score": similarity_score
+            "score": similarity_score,
+            "originalPrompt": hi
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
