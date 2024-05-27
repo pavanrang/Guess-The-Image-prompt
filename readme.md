@@ -116,40 +116,6 @@ Calculates the similarity score between the original prompt and the guessed prom
     }
     ```
 
-## File Structure
-
-- `main.py`: The FastAPI backend application.
-- `index.html`: The main HTML file for the frontend interface.
-- `styles.css`: The CSS file for styling the frontend interface.
-- `script.js`: The JavaScript file for frontend functionality.
-
-## Dependencies
-
-- **Python Packages:**
-    - `fastapi`
-    - `pydantic`
-    - `requests`
-    - `python-dotenv`
-    - `jellyfish`
-
-- **JavaScript Libraries:**
-    - `jQuery`
 
 Make sure to install the Python packages using `pip install -r requirements.txt` and include the jQuery library in your HTML.
 
-## Contributing
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature-name`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature/your-feature-name`).
-6. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
-Feel free to modify any section to better suit your project specifics.
