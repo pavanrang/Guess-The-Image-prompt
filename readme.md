@@ -1,5 +1,5 @@
 # Guess the Prompt Game
-![Demo](Demo.gif)
+![Demo](demo.gif)
 
 ## About the Game
 
